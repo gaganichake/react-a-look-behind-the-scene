@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Button from './components/UI/Button/Button'
-
+import DemoOutput from './components/Demo/DomoOutput';
 import './App.css';
 
 function App() {
   const [showParagraph, setShowParagraph] = useState(false);
 
-  console.log('Component re-evaluated!');
+  console.log('App component re-evaluated!');
 
   const toggleParagraphHandler = () => {
     setShowParagraph((prevShowParagraph) => !prevShowParagraph);
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="app">
       <h1>Hi there!</h1>
-      {showParagraph && <p>This is a new content!</p>}
+      <DemoOutput show={showParagraph} />
       <Button onClick={toggleParagraphHandler}>Toggle Paragraph!</Button>
     </div>
   );
